@@ -1,4 +1,4 @@
-from otp import OTP
+from src.otp import OTP
 
 def test_all_valid_letters_no_input():
     a = OTP()

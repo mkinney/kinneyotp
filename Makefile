@@ -1,5 +1,7 @@
-test:
+test: FORCE
 	pytest
 
 cov:
-	pytest --cov-report term-missing --cov=otp --cov=key tests/
+	pytest --cov-report term-missing --cov=src test/
+
+FORCE: ;

@@ -1,4 +1,4 @@
-from key import Key
+from src.key import Key
 
 def test_key_with_defaults_and_seed_set():
     k = Key(seed=10)
