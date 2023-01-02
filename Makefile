@@ -2,7 +2,7 @@ test: FORCE
 	pytest
 
 cov:
-	pytest --cov-report term-missing --cov=src test/
+	pytest --cov-report term-missing --cov=kinneyotp test/
 
 build: test
 	rm -rf dist/

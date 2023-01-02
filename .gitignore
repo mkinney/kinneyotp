@@ -4,4 +4,6 @@ __pycache__/
 .pytest_cache/
 .coverage
 dist/
-src/kinneyotp.egg-info/
+build/
+kinneyotp.egg-info/
+kinneyotp/
