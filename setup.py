@@ -1,6 +1,28 @@
-#!python
+import pathlib
+from setuptools import setup
 
-import setuptools
+# The directory containing this file
+HERE = pathlib.Path(__file__).parent
 
-if __name__ == "__main__":
-    setuptools.setup()
+with open("README.md", "r") as fh:
+    long_description = fh.read()
+
+# This call to setup() does all the work
+setup(
+    name="kinneyotp",
+    version="0.0.12",
+    description="One Time Pad (aka Vernam Cipher) encoding and decoding.",
+    author="Mike Kinney",
+    author_email="mike.kinney@gmail.com",
+    classifiers=[
+        "Development Status :: 4 - Beta",
+        "Programming Language :: Python :: 3.10",
+    ],
+    packages=["kinneyotp"],
+    include_package_data=True,
+    install_requires=[],
+    extras_require={},
+    python_requires='>=3.7',
+    entry_points={
+    },
+)

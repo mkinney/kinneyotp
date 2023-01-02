@@ -5,13 +5,14 @@ prep:
 	pip install pytest pytest-cov
 	python3 -m pip install --upgrade build
 	python3 -m pip install --upgrade twine
+	python3 -m pip install --upgrade pip setuptools wheel
 
 cov:
 	pytest --cov-report term-missing --cov=kinneyotp test/
 
-build: test
+build: test FORCE
 	rm -rf dist/
-	python -m build . --wheel
+	python3 -m build . --wheel
 
 release: build
 	python3 -m twine upload dist/*

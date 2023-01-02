@@ -1,7 +1,6 @@
 #!python
 
-from kinneyotp import OTP
-from kinneyotp import Key
+from kinneyotp import Key, OTP
 
 alphabet="ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
 
