@@ -6,7 +6,7 @@ cov:
 
 build: test
 	rm -rf dist/
-	python3 -m build
+	python -m build . --wheel
 
 release: build
 	python3 -m twine upload dist/*

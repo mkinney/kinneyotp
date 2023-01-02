@@ -1,6 +1,6 @@
 [project]
 name = "kinneyotp"
-version = "0.0.7"
+version = "0.0.9"
 authors = [
   { name="Mike Kinney", email="mike.kinney@gmail.com" },
 ]
@@ -14,6 +14,7 @@ classifiers = [
 
 [build-system]
 requires = [
-  "setuptools >= 40.9.0",
+  "setuptools",
+  "wheel",
 ]
 build-backend = "setuptools.build_meta"
