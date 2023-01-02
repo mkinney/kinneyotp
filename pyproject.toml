@@ -1,6 +1,6 @@
 [project]
 name = "kinneyotp"
-version = "0.0.9"
+version = "0.0.10"
 authors = [
   { name="Mike Kinney", email="mike.kinney@gmail.com" },
 ]

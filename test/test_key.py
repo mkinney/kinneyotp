@@ -1,4 +1,4 @@
-from kinneyotp.key import Key
+from kinneyotp import Key
 
 def test_key_with_defaults_and_seed_set():
     k = Key(seed=10)
