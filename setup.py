@@ -10,8 +10,10 @@ with open("README.md", "r") as fh:
 # This call to setup() does all the work
 setup(
     name="kinneyotp",
-    version="0.0.12",
+    version="0.0.14",
     description="One Time Pad (aka Vernam Cipher) encoding and decoding.",
+    long_description=long_description,
+    long_description_content_type='text/markdown',
     author="Mike Kinney",
     author_email="mike.kinney@gmail.com",
     classifiers=[
