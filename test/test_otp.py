@@ -42,9 +42,21 @@ def test_decode_valid_key_default_alphabet():
     assert msg == ""
     assert val == "hello"
 
-def test_decode_key_length_different():
+def test_decode_key_is_longer():
     a = OTP(key="abc")
     msg, val = a.decode("a")
+    assert msg == ""
+    assert val == "a"
+
+def test_decode_key_and_text_are_same_length():
+    a = OTP(key="abc")
+    msg, val = a.decode("abc")
+    assert msg == ""
+    assert val == "aaa"
+
+def test_decode_key_is_not_long_enough():
+    a = OTP(key="a")
+    msg, val = a.decode("abc")
     assert msg != ""
     assert val == ""
 
