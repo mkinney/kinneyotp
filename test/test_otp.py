@@ -73,11 +73,11 @@ def test_decode_key_has_letters_not_in_alphabet():
     assert val == ""
 
 def test_with_different_alphabet():
-    a = OTP(alphabet="ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789.,?!", key="KFJGH")
-    e = "HELLO"
+    a = OTP(alphabet="ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789.,?!", key="KJJGHV")
+    e = "HELLO."
     msg, val = a.encode(e)
     assert msg == ""
-    assert val == "RJURV"
+    assert val == "RNURVR"
     msg2, val2 = a.decode(val)
     assert msg2 == ""
     assert val2 == e
