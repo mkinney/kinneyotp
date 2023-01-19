@@ -1,7 +1,7 @@
 class OTP:
     """one time pad class"""
 
-    def __init__(self, alphabet="abcdefghijklmnopqrstuvwxyz", key=""):
+    def __init__(self, alphabet="ABCDEFGHIJKLMNOPQRSTUVWXYZ", key=""):
         """Constructor"""
         self.alphabet = alphabet
         self.key = key
@@ -61,7 +61,7 @@ import random
 class Key:
     """Generate a key out of letters from the alphabet."""
 
-    def __init__(self, seed=None, length=20, alphabet="abcdefghijklmnopqrstuvwxyz"):
+    def __init__(self, seed=None, length=20, alphabet="ABCDEFGHIJKLMNOPQRSTUVWXYZ"):
         """Constructor"""
         if seed:
             # Note: Use a seed to make the key generation consistent. (i.e, not random)

@@ -10,7 +10,7 @@ def test_all_valid_letters_a_letter_not_in_alphabet():
 
 def test_all_valid_letters_valid_input():
     a = OTP()
-    assert a.all_valid_letters("abcabc") == True
+    assert a.all_valid_letters("ABCABC") == True
 
 def test_encode_no_key():
     a = OTP()
@@ -19,10 +19,10 @@ def test_encode_no_key():
     assert val == ""
 
 def test_encode_valid_key_default_alphabet():
-    a = OTP(key="hbdiq")
-    msg, val = a.encode("hello")
+    a = OTP(key="HBDIQ")
+    msg, val = a.encode("HELLO")
     assert msg == ""
-    assert val == "ofote"
+    assert val == "OFOTE"
 
 def test_encode_letter_text_to_encode_has_letter_not_in_alphabet():
     a = OTP(alphabet="abc", key="abc")
@@ -37,38 +37,38 @@ def test_encode_letter_key_has_letter_not_in_alphabet():
     assert val == ""
 
 def test_decode_valid_key_default_alphabet():
-    a = OTP(key="hbdiq")
-    msg, val = a.decode("ofote")
+    a = OTP(key="HBDIQ")
+    msg, val = a.decode("OFOTE")
     assert msg == ""
-    assert val == "hello"
+    assert val == "HELLO"
 
 def test_decode_key_is_longer():
-    a = OTP(key="abc")
-    msg, val = a.decode("a")
+    a = OTP(key="ABC")
+    msg, val = a.decode("A")
     assert msg == ""
-    assert val == "a"
+    assert val == "A"
 
 def test_decode_key_and_text_are_same_length():
-    a = OTP(key="abc")
-    msg, val = a.decode("abc")
+    a = OTP(key="ABC")
+    msg, val = a.decode("ABC")
     assert msg == ""
-    assert val == "aaa"
+    assert val == "AAA"
 
 def test_decode_key_is_not_long_enough():
-    a = OTP(key="a")
-    msg, val = a.decode("abc")
-    assert msg != ""
-    assert val == ""
-
-def test_decode_letter_in_decode_string_not_in_alphabet():
-    a = OTP(key="abc")
+    a = OTP(key="A")
     msg, val = a.decode("ABC")
     assert msg != ""
     assert val == ""
 
-def test_decode_key_has_letters_not_in_alphabet():
+def test_decode_letter_in_decode_string_not_in_alphabet():
     a = OTP(key="ABC")
     msg, val = a.decode("abc")
+    assert msg != ""
+    assert val == ""
+
+def test_decode_key_has_letters_not_in_alphabet():
+    a = OTP(key="abc")
+    msg, val = a.decode("ABC")
     assert msg != ""
     assert val == ""
 
@@ -78,6 +78,15 @@ def test_with_different_alphabet():
     msg, val = a.encode(e)
     assert msg == ""
     assert val == "RNURVR"
+    msg2, val2 = a.decode(val)
+    assert msg2 == ""
+    assert val2 == e
+
+def test_encode_matches_decode():
+    a = OTP(alphabet="ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789.,?!", key="9!KOOL.")
+    e = "TES?ING"
+    msg, val = a.encode(e)
+    assert msg == ""
     msg2, val2 = a.decode(val)
     assert msg2 == ""
     assert val2 == e
